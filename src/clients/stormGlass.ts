@@ -39,7 +39,12 @@ export class StormGlass {
 
   public async fetchPoints(lat: number, lng: number): Promise<ForecastPoint[]> {
     const response =  await this.request.get<StormGlassForecastResponse>(
-      `https://api.stormglass.io/v2/weather/point?params=${this.stormGlassAPIParamas}&source=${this.stormGlassAPISource}&end=1592113802&lat=%24%7Blat%7D&lng=%24%7Blng%7D`
+      `https://api.stormglass.io/v2/weather/point?params=${this.stormGlassAPIParamas}&source=${this.stormGlassAPISource}&end=1592113802&lat=%24%7Blat%7D&lng=%24%7Blng%7D`,
+      {
+        headers: {
+          Authorization: 'fake-token'
+        }
+      }  
     )
     return this.normalizeResponse(response.data)  // to retornando os dados normalizados
   } 
