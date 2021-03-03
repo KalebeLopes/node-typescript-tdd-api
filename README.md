@@ -3,6 +3,7 @@
 * NodeJS
 * Typescript
 * TDD
+* Clean Architecture
 * Jest
 * OvernightJS
 * Axios
