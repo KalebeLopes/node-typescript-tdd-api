@@ -35,7 +35,7 @@ export class StormGlass {
     'swellDirection%2CswellHeight%2CswellPeriod%2CwaveDirection%2CwaveHeight%2CwindDirection,windSpeed'
   readonly stormGlassAPISource = 'noaa'
   
-  constructor(protected request: AxiosStatic) {}
+  constructor(protected request: AxiosStatic) { }
 
   public async fetchPoints(lat: number, lng: number): Promise<ForecastPoint[]> {
     const response =  await this.request.get<StormGlassForecastResponse>(
